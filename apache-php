@@ -1,0 +1,11 @@
+FROM ubuntu
+
+VOLUME /etc/localtime
+
+RUN apt update && apt-get install -y \
+  apache2 php libapache2-mod-php && \
+  rm -rf /var/lib/apt/lists/*
+
+EXPOSE 80
+
+ENTRYPOINT service apache2 start && service apache-htcacheclean start && sleep infinity
