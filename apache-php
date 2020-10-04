@@ -3,7 +3,7 @@ FROM ubuntu
 VOLUME /etc/localtime
 
 RUN apt update && apt-get install -y \
-  apache2 php libapache2-mod-php && \
+  apache2 php libapache2-mod-php php-xml php-xmlrpc php-zip php-soap php-curl php-bz2 && \
   rm -rf /var/lib/apt/lists/*
 
 EXPOSE 80
